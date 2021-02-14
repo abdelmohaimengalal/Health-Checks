@@ -128,7 +128,7 @@ git branch -a same with appear branches
 If we want to make a change to a remote branch, what must Pull the remote branch, merge it with the local branch, then push it back to its origin. We still have to go through the normal workflow to change remote branches. (git pull)
 
 
-
+The first time we push a branch to a remote repo, we need to add a few more parameters to the Git push command. We'll need to add the -u flag to create the branch upstream, which is another way of referring to remote repositories
 
 
 
