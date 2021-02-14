@@ -63,7 +63,7 @@ If we realize we've added something to the staging area that we didn't actually 
 
 if we use a command like git add *, where the star is a file glob pattern used in Bash that expands to all files. This command will end up adding any change done in the working tree to the staging area
 
-git reset HEAD <file name > or git restore --staged <file> untrack the filee tracked from git add *
+git reset HEAD <file name > or git restore --staged <file> untrack the file tracked from git add *
 
 git reset -p to get git to ask you which specific changes you want to reset.
 
@@ -104,7 +104,7 @@ pointers of the branches to the same commit
 three-way merge is performed when the history of the merging branches has diverged in some way, and there isn't a nice linear path to 
 combine them via fast-forwarding. This happens when a commit is made on one branch after the point when both branches split.
 
-merge coflict to abort it use git merge --abort whe n we open our file that case conflict we see arrow and all changes make conflict what we want to keep & so on 
+merge coflict to abort it use git merge --abort when we open our file that case conflict we see arrow and all changes make conflict what we want to keep & so on 
 then git add file then git commit write ur commit and merge will done
 
 git log --graph --oneline This shows a summarized view of the commit history for a repo.
