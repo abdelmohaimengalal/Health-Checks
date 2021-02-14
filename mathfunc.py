@@ -11,3 +11,6 @@ def divsion(x,y):
 
 def subtraction (x,y):
     return x-y
+
+def square (x,y):
+    return x**y
