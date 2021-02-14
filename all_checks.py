@@ -23,19 +23,6 @@ def check_root_full():
     return check_disk_full(disk = '/', min_GB = 2 ,min_percent = 10)
 
 def main():
-    """there's a pattern of repeating code in our all checks pi script. For each check that we call, we check if it returns true or false.
-        When it returns true, we print an error and exit.  If we add a new check, we'll have to repeat this pattern again."""
-
-    """To avoid code repetition, we'll create a list containing the names of the functions that we want to call,
-    and then message to print if the function succeeds.
-    After that, we'll add a for loop that iterates over the list of checks and messages.
-    Then we'll call check, and if the return value is true,
-    print the message and exit with an error code of one. After doing that we can delete the old code that we've already replaced"""
-
-    #we wanna let our script show more than one message if more than one check is failing
-    """ we add a Boolean variable called "Everything Ok" before the iteration. 
-    Changes variable to false if one of the checks finds a problem, 
-    and then exit with an error code only after having done all the checks."""
 
     everything_ok = True
 
