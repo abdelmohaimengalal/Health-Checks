@@ -110,6 +110,22 @@ then git add file then git commit write ur commit and merge will done
 git log --graph --oneline This shows a summarized view of the commit history for a repo.
 
 
+ can send our changes to that remote repository by using the git push command which will gather all the snapshots we've taken and send them to the remote repository.
+
+There are a couple ways to avoid having to do this. One way is to create an SSH key pair and store the public key in our profile so that  GitHub recognizes our computer. Another option is to use a credential helper which caches our credentials for a time window so that we don't need to enter our password with every interaction. Git already comes with a credential helper baked in. We just need to enable it. We do that by calling git config --global credential.helper cache.
+
+git pull which is the command we use to retrieve new changes from the repository./used to fetch the newest updates from a remote repository
+
+When we call a git clone to get a local copy of a remote repository, Git sets up that remote repository with the default origin name. We can look at the configuration for that remote by running git remote -v 
+
+
+If we want to get even more information about our remote, we can call git remote show origin.
+
+Git uses remote branches to keep copies of the data that's stored in the remote repository. We could have a look at the remote branches that our Git repo is currently tracking by running git branch -r
+
+git branch -a same with appear branches  
+
+If we want to make a change to a remote branch, what must Pull the remote branch, merge it with the local branch, then push it back to its origin. We still have to go through the normal workflow to change remote branches. (git pull)
 
 
 
