@@ -10,4 +10,4 @@ def divsion(x,y):
     return x/y
 
 def subtraction (x,y):
-    pass
+    return x-y
