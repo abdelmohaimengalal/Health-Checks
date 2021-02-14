@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import os
 import sys
+import shutil
 def check_reboot():
     """return true if computer has pending rebot."""
     return os.path.exists("/run/reboot-required")
