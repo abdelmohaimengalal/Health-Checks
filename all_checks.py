@@ -32,12 +32,20 @@ def main():
     Then we'll call check, and if the return value is true,
     print the message and exit with an error code of one. After doing that we can delete the old code that we've already replaced"""
 
+    #we wanna let our script show more than one message if more than one check is failing
+    """ we add a Boolean variable called "Everything Ok" before the iteration. 
+    Changes variable to false if one of the checks finds a problem, 
+    and then exit with an error code only after having done all the checks."""
+
+    everything_ok = True
 
     checks = [(check_reboot,"Pending Reboot"),(check_root_full, "Root Partion Full")]
     for check,msg in checks :
         if check() :
             print(msg)
-            sys.exit(1)
+            everything_ok = False
+    if not everything_ok :
+        sys.exit(1)
 
     print("Everything okay")
     sys.exit(0)
