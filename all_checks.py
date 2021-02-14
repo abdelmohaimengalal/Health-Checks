@@ -18,20 +18,26 @@ def check_disk_full(disk,min_GB,min_percent):
     if percent_free < min_percent or gigabites_free < min_GB :
         return True
     return False
-def check_full():
+def check_root_full():
     """return true if the root partion is full ,false otherwise"""
     return check_disk_full(disk = '/', min_GB = 2 ,min_percent = 10)
 
 def main():
     """there's a pattern of repeating code in our all checks pi script. For each check that we call, we check if it returns true or false.
         When it returns true, we print an error and exit.  If we add a new check, we'll have to repeat this pattern again."""
-    if check_reboot():
-        print("pending reboot")
-        sys.exit(1)
 
-    if check_full():
-        print("root partion Full.")
-        sys.exit(1)
+    """To avoid code repetition, we'll create a list containing the names of the functions that we want to call,
+    and then message to print if the function succeeds.
+    After that, we'll add a for loop that iterates over the list of checks and messages.
+    Then we'll call check, and if the return value is true,
+    print the message and exit with an error code of one. After doing that we can delete the old code that we've already replaced"""
+
+
+    checks = [(check_reboot,"Pending Reboot"),(check_root_full, "Root Partion Full")]
+    for check,msg in checks :
+        if check() :
+            print(msg)
+            sys.exit(1)
 
     print("Everything okay")
     sys.exit(0)
