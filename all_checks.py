@@ -18,9 +18,12 @@ def check_disk_full(disk,min_GB,min_percent):
     if percent_free < min_percent or gigabites_free < min_GB :
         return True
     return False
+
+
 def check_root_full():
     """return true if the root partion is full ,false otherwise"""
     return check_disk_full(disk = '/', min_GB = 2 ,min_percent = 10)
+
 
 def main():
 
