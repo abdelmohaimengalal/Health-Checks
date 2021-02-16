@@ -137,9 +137,15 @@ The problem with three way merges is that because of the split history, it's har
 
 
 
+create a single commit that includes both changes and a more detailed description than the one we submitted. We can do that by using the interactive version of the rebase command called rebase-i + main or branch
 
+ When we call an interactive rebase, a text editor opens with a list of all the selected commits from the oldest to the most recent. By changing the first word of each line, we can select what we want to do with the commits. The default action here is pick which takes the commits and rebases them against the branch we selected.
+ 
+ We have two options for combining commits, squash and fix up , In both cases, the contents of the selected commit are merged into the previous commit in the list. The difference is what happens with the commit messages. When we choose squash, the commit messages are added together and an editor opens up to let us make any necessary changes. When we choose fix up, the commit message for that commit is discarded
 
+Once we've told git that we want to squash a commit unto the one before it, we're given another file to edit. In this case, it's the combined commit message
 
+in this case, we don't want to create a merge. Instead, we want to replace the old commits with the new one. To do this, we will call git push -f to force git to push the current snapshot into the repo as is.
 
 
 
