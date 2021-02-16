@@ -3,6 +3,7 @@ import os
 import sys
 import shutil
 import psutil
+import socket
 
 def check_reboot():
     """return true if computer has pending rebot."""
@@ -25,15 +26,26 @@ def check_root_full():
     """return true if the root partion is full ,false otherwise"""
     return check_disk_full(disk = '/', min_GB = 2 ,min_percent = 10)
 
+
 def check_cpu_constrained():
     """return True if cpu having too much usage , False otherwise"""
     return psutil.cpu_percent(1) > 75
+
+def check_no_network():
+    """return True if it fails to resolve google's URL,False otherwise"""
+    try:
+        socket.gethostbyname("www.google.com")
+        return False
+
+    except:
+        return True
 
 def main():
     everything_ok = True
     checks = [(check_reboot,"Pending Reboot"),
               (check_root_full, "Root Partion Full"),
-              (check_cpu_constrained,"CPU loud to high")]
+              (check_cpu_constrained,"CPU loud to high"),
+              (check_no_network,"no working network.")]
     for check,msg in checks :
         if check() :
             print(msg)
