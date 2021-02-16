@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-def add2(x,y):
+def addition(x,y):
     return x+y
 
-def multi(x,y):
+def multiplication(x,y):
     return x*y
 
 def divsion(x,y):
