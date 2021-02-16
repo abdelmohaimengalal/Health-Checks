@@ -131,6 +131,9 @@ If we want to make a change to a remote branch, what must Pull the remote branch
 The first time we push a branch to a remote repo, we need to add a few more parameters to the Git push command. We'll need to add the -u flag to create the branch upstream, which is another way of referring to remote repositories
 
 
+git rebase branchname another option to merge (alternative to merge), it means changing the base commit that's used for our branch.
+
+The problem with three way merges is that because of the split history, it's hard for us to debug when an issue is found in our code, and we need to understand where the problem was introduced. By changing the base where our commits split from the branch history, we can replay the new commits on top of the new base. This allows Git to do a fast forward merge and keep history linear
 
 
 
