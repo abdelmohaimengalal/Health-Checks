@@ -25,7 +25,7 @@ def check_root_full():
     """return true if the root partion is full ,false otherwise"""
     return check_disk_full(disk = '/', min_GB = 2 ,min_percent = 10)
 
-def C():
+def check_cpu_constrained():
     """return True if cpu having too much usage , False otherwise"""
     return psutil.cpu_percent(1) > 75
 
